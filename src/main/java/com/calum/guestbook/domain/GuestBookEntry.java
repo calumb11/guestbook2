@@ -3,10 +3,7 @@ package com.calum.guestbook.domain;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.data.repository.CrudRepository;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.List;
 
 
@@ -14,10 +11,34 @@ import java.util.List;
 public class GuestBookEntry {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "entry_id")
     private Integer id;
     @NotEmpty
     private String user;
     @NotEmpty
     private String comment;
+
+
+    public Integer getId() {
+        return id;
+    }
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getUser() {
+        return user;
+    }
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
 
 }
