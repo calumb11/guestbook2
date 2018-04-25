@@ -62,4 +62,13 @@ public class GuestBookEntry {
         this.comment = comment;
     }
 
+    @Override
+    public String toString () {
+        return "GuestBookEntry{" +
+                "id=" + id +
+                ", user='" + user + '\'' +
+                ", comment+'" + comment + '\'' +
+                '}';
+    }
+
 }
