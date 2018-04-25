@@ -8,7 +8,7 @@ import java.util.List;
 
 
 @Entity
-@Table (name = "entires")
+@Table (name = "entries")
 public class GuestBookEntry {
 
     @Id
@@ -22,16 +22,7 @@ public class GuestBookEntry {
     @NotEmpty
     private String comment;
 
-    public GuestBookEntry (String user, String comment) {
-        this.user = user;
-        this.comment = comment;
-    }
 
-    public GuestBookEntry (Integer id, String user, String comment) {
-        this.id = id;
-        this.user = user;
-        this.comment = comment;
-    }
 
 
     public Integer getId () {
@@ -62,13 +53,6 @@ public class GuestBookEntry {
         this.comment = comment;
     }
 
-    @Override
-    public String toString () {
-        return "GuestBookEntry{" +
-                "id=" + id +
-                ", user='" + user + '\'' +
-                ", comment+'" + comment + '\'' +
-                '}';
-    }
+
 
 }
