@@ -13,6 +13,9 @@ public class GuestBookService {
     @Autowired
     private GuestBookEntryRepository guestBookEntryRepository;
 
+    @Autowired
+    private GuestBookService guestBookService;
+
     public List <GuestBookEntry> findAllEntries () {
         return this.guestBookEntryRepository.findAll ();
     }

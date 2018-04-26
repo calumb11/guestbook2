@@ -7,9 +7,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class GuestBookWebController {
 
-    @ResponseBody
-    @GetMapping("/")
-    public String helloWorld () {
-        return "Hello, World";
+    private static final String GUESTBOOK_TEMPLATE = "guestbook";
+
+    @GetMapping ("/")
+    public String displayGuestBook () {
+        return GUESTBOOK_TEMPLATE;
     }
 }
