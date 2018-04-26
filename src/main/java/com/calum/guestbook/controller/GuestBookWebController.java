@@ -1,11 +1,14 @@
-package com.calum.guestbook.controller;
+/*package com.calum.guestbook.controller;
 
+import com.calum.guestbook.domain.GuestBookEntry;
 import com.calum.guestbook.service.GuestBookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @Controller
 public class GuestBookWebController {
@@ -23,14 +26,14 @@ public class GuestBookWebController {
     public String displayGuestBook (Model model) {
 
         model.addAttribute (FORM_ENTRIES_ID, this.guestBookService.findAllEntries ());
-        model.addAttribute ("newEntry", new GuestBookEntry ());
+        model.addAttribute ("newEntry", new GuestBookEntry());
 
         return GUESTBOOK_FORM;
     }
 
-    @PostMapping (value = "/")
+    @PostMapping(value = "/")
     public String addComment (Model model,
-                              @Valid @ModelAttribute ("newEntry") GuestBookEntry newEntry,
+                              @Valid @ModelAttribute("newEntry") GuestBookEntry newEntry,
                               BindingResult bindingResult) {
 
         if (bindingResult.hasErrors ()) {
@@ -87,3 +90,4 @@ public class GuestBookWebController {
 
 
 }
+*/

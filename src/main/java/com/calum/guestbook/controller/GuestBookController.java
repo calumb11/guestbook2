@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping ("/api")
+/*@RequestMapping ("/api")*/
 @RestController
 public class GuestBookController {
 
@@ -19,7 +19,6 @@ public class GuestBookController {
     public List <GuestBookEntry> getAllComments () {
         return guestBookService.findAllEntries ();
     }
-
 
     @GetMapping ("/comment/{id}")
     public GuestBookEntry findGuestBookEntryById (@PathVariable("id") Integer id) {

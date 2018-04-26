@@ -13,7 +13,6 @@ import java.util.List;
 
 
 @Entity
-@EntityListeners(AuditingEntityListener.class)
 @Table (name = "entries")
 public class GuestBookEntry {
 
@@ -28,14 +27,14 @@ public class GuestBookEntry {
     @NotEmpty
     private String comment;
 
-    @CreatedDate
+   /* @CreatedDate
     @Column (name = "modified_date")
     private Date created;
 
     @LastModifiedDate
     @Column (name ="modified_date")
     private Date modified;
-
+*/
 
 
     public GuestBookEntry () {
@@ -80,7 +79,7 @@ public class GuestBookEntry {
         this.comment = comment;
     }
 
-
+/*
     public Date getCreated () {
         return created;
     }
@@ -96,7 +95,7 @@ public class GuestBookEntry {
     public void setModified (Date modified) {
         this.modified = modified;
     }
-
+*/
 
 
     @Override
@@ -105,8 +104,8 @@ public class GuestBookEntry {
                 "id=" + id +
                 ", user='" + user + '\'' +
                 ", comment='" + comment + '\'' +
-                ", created=" + created +
-                ", modified=" + modified +
+                /*", created=" + created +
+                ", modified=" + modified +*/
                 '}';
     }
 }
