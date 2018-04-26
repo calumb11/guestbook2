@@ -1,14 +1,19 @@
 package com.calum.guestbook.domain;
 
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.springframework.data.repository.CrudRepository;
 
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 
 
 @Entity
+@EntityListeners(AuditingEntityListener.class)
 @Table (name = "entries")
 public class GuestBookEntry {
 
@@ -22,6 +27,15 @@ public class GuestBookEntry {
 
     @NotEmpty
     private String comment;
+
+    @CreatedDate
+    @Column (name = "modified_date")
+    private Date created;
+
+    @LastModifiedDate
+    @Column (name ="modified_date")
+    private Date modified;
+
 
 
     public GuestBookEntry () {
@@ -66,12 +80,33 @@ public class GuestBookEntry {
         this.comment = comment;
     }
 
+
+    public Date getCreated () {
+        return created;
+    }
+
+    public void setCreated (Date created) {
+        this.created = created;
+    }
+
+    public Date getModified () {
+        return modified;
+    }
+
+    public void setModified (Date modified) {
+        this.modified = modified;
+    }
+
+
+
     @Override
     public String toString () {
         return "GuestBookEntry{" +
                 "id=" + id +
                 ", user='" + user + '\'' +
                 ", comment='" + comment + '\'' +
+                ", created=" + created +
+                ", modified=" + modified +
                 '}';
     }
 }
